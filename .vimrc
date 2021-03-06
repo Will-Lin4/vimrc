@@ -88,3 +88,6 @@ fun! AutoComplete()
     end
 endfun
 
+" Highlight and replace
+vnoremap <C-r> "hy:%s/<C-r>h/<C-r>h/gc<left><left><left>
+vnoremap / "hy/<C-r>h<Return>N
