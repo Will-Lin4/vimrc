@@ -46,9 +46,12 @@ vnoremap p "_dP
 
 set laststatus=2
 set noshowmode
+
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ }
+
+let g:indentLine_enabled = 0
 
 nnoremap <C-E> <C-E><C-E>
 nnoremap <C-Y> <C-Y><C-Y>
@@ -59,8 +62,6 @@ set relativenumber
 set rnu
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-let g:indentLine_enabled = 1
-let g:indentLine_char = '┊'
 
 set cursorline
 autocmd colorscheme delek highlight CursorLine cterm=NONE ctermbg=234  
@@ -90,11 +91,24 @@ fun! AutoComplete()
     end
 endfun
 
-" Highlight and replace
-vnoremap <C-r> "hy:%s/<C-r>h/<C-r>h/gc<left><left><left>
-vnoremap / "hy/<C-r>h<Return>N
+func! EscapeLastRegister()
+    return escape(@", '^$.*/\[]')
+endfun
 
-" Set font of gvim
+" Highlight and replace
+vnoremap <C-r> 
+    \ "by
+    \ :let @a = EscapeLastRegister()<CR>
+    \ :,$s/<C-r>a/<C-r>b/gc<Bar>1,''-&&
+    \ <left><left><left><left><left><left><left><left><left><left><left><left>
+
+vnoremap /
+    \ "by
+    \ :let @b = EscapeLastRegister()<CR>
+    \ /<C-r>b<Return>N
+
+" gvim configuration
 if has("gui_running")
   set guifont=Source\ Code\ Pro\ 13
 endif
+
