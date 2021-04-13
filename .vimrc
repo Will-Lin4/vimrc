@@ -14,6 +14,8 @@ set ignorecase
 set noincsearch
 set smartcase
 
+set nohlsearch
+
 syntax enable
 colorscheme delek 
 
@@ -91,3 +93,8 @@ endfun
 " Highlight and replace
 vnoremap <C-r> "hy:%s/<C-r>h/<C-r>h/gc<left><left><left>
 vnoremap / "hy/<C-r>h<Return>N
+
+" Set font of gvim
+if has("gui_running")
+  set guifont=Source\ Code\ Pro\ 13
+endif
