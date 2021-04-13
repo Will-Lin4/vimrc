@@ -97,10 +97,13 @@ endfun
 
 " Highlight and replace
 vnoremap <C-r> 
+    \ ma
     \ "by
     \ :let @a = EscapeLastRegister()<CR>
-    \ :,$s/<C-r>a/<C-r>b/gc<Bar>1,''-&&
-    \ <left><left><left><left><left><left><left><left><left><left><left><left>
+    \ :,$s/<C-r>a/<C-r>b/gc
+    \ <Bar> 1,''-&&
+    \ <Bar> call feedkeys("'a")
+    \ <left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 vnoremap /
     \ "by
