@@ -97,18 +97,18 @@ endfun
 
 " Highlight and replace
 vnoremap <C-r> 
-    \ ma
-    \ "by
-    \ :let @a = EscapeLastRegister()<CR>
-    \ :,$s/<C-r>a/<C-r>b/gc
-    \ <Bar> 1,''-&&
-    \ <Bar> call feedkeys("'a")
-    \ <left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+    \ma
+    \"by
+    \:let @a = EscapeLastRegister()<CR>
+    \:,$s/<C-r>a/<C-r>b/gc
+    \<Bar> 1,''-&&
+    \<Bar> call feedkeys("'a")
+    \<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 vnoremap /
-    \ "by
-    \ :let @b = EscapeLastRegister()<CR>
-    \ /<C-r>b<Return>N
+    \"by
+    \:let @b = EscapeLastRegister()<CR>
+    \/<C-r>b<Return>N
 
 " gvim configuration
 if has("gui_running")
