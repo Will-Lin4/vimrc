@@ -66,7 +66,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set cursorline
 autocmd colorscheme delek highlight CursorLine cterm=NONE ctermbg=234  
 
-set mouse=a
+" set mouse=a
 
 " Keep visaul block active when indenting
 vmap > >gv
@@ -113,5 +113,6 @@ vnoremap /
 " gvim configuration
 if has("gui_running")
   set guifont=Source\ Code\ Pro\ 13
+  colorscheme slate
 endif
 
