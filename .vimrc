@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 " Plug 'ajh17/VimCompletesMe'
 Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'rhysd/clever-f.vim'
+" Plug 'Yggdroot/indentLine'
+" Plug 'rhysd/clever-f.vim'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
@@ -56,7 +56,7 @@ let g:indentLine_enabled = 0
 nnoremap <C-E> <C-E><C-E>
 nnoremap <C-Y> <C-Y><C-Y>
 
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 set relativenumber
 set rnu
