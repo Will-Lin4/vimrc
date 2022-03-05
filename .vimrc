@@ -17,7 +17,7 @@ set smartcase
 set nohlsearch
 
 syntax enable
-colorscheme delek 
+colorscheme default 
 
 " Performance
 set re=1
@@ -26,6 +26,8 @@ set lazyredraw
 
 set autoindent
 set smartindent
+set copyindent
+set preserveindent
 
 set colorcolumn=80
 
@@ -61,7 +63,8 @@ set clipboard^=unnamed,unnamedplus
 set relativenumber
 set rnu
 
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" May be adjusted below
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 set cursorline
 autocmd colorscheme delek highlight CursorLine cterm=NONE ctermbg=234  
